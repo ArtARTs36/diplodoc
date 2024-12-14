@@ -42,6 +42,8 @@ jobs:
         include:
           - module: 'packages/test'
             repo: 'ggg'
+          - module: 'packages/test1'
+            repo: 'ggg'
           - module: 'packages/components'
             repo: git@github.com:diplodoc-platform/components.git
           - module: 'packages/transform'
