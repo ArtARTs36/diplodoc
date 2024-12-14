@@ -47,7 +47,7 @@ jobs:
         module: ${{ fromJSON(needs.changed-files.outputs.packages) }}
         include:
           - module: 'packages/test'
-            repo: 'packages/transform'
+            repo: diplodoc-platform/transform
           - module: 'packages/test1'
             repo: 'ggg'
           - module: 'packages/components'
