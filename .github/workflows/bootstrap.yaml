@@ -38,13 +38,31 @@ jobs:
 
     strategy:
       matrix:
-        package: ${{ needs.changed-files.outputs.packages }}
+        module: ${{ needs.changed-files.outputs.packages }}
+        include:
+          - module: 'package/test'
+            repo: 'ggg'
+          - module: 'packages/components'
+            repo: git@github.com:diplodoc-platform/components.git
+          - module: 'packages/transform'
+            repo: git@github.com:diplodoc-platform/transform.git
+          - module: 'packages/cli'
+            repo: git@github.com:diplodoc-platform/cli.git
+          - module: 'packages/client'
+            repo: git@github.com:diplodoc-platform/client.git
+          - module: 'packages/gh-docs'
+            repo: git@github.com:diplodoc-platform/gh-docs.git
+          - module: 'packages/sentenizer'
+            repo: git@github.com:diplodoc-platform/sentenizer.git
+          - module: 'packages/translation'
+            repo: git@github.com:diplodoc-platform/translation.git
+
 
     steps:
-      - name: Check out ${{ matrix.package }}
+      - name: Check out ${{ matrix.module }}
         uses: actions/checkout@v4
         with:
-          repository: diplodoc-platform/${{ matrix.package }}
+          repository: ${{ matrix.repo }}
 
       - name: Run npm bootstrap
         run: npm run bootstrap
