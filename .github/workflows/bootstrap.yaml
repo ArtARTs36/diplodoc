@@ -65,6 +65,7 @@ jobs:
           - module: 'packages/translation'
             repo: diplodoc-platform/translation
 
+    if: contains(fromJSON(needs.changed-files.outputs.packages), matrix.module)
 
     steps:
       - name: Check out ${{ matrix.module }}
