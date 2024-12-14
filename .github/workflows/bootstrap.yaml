@@ -40,7 +40,7 @@ jobs:
       matrix:
         module: ${{ needs.changed-files.outputs.packages }}
         include:
-          - module: 'package/test'
+          - module: 'packages/test'
             repo: 'ggg'
           - module: 'packages/components'
             repo: git@github.com:diplodoc-platform/components.git
