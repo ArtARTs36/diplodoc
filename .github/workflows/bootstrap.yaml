@@ -44,7 +44,7 @@ jobs:
 
     strategy:
       matrix:
-        module: ${{ needs.changed-files.outputs.packages }}
+        module: ${{ fromJSON(needs.changed-files.outputs.packages) }}
         include:
           - module: 'packages/test'
             repo: 'ggg'
