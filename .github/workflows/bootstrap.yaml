@@ -51,19 +51,19 @@ jobs:
           - module: 'packages/test1'
             repo: 'ggg'
           - module: 'packages/components'
-            repo: diplodoc-platform/components.git
+            repo: diplodoc-platform/components
           - module: 'packages/transform'
-            repo: diplodoc-platform/transform.git
+            repo: diplodoc-platform/transform
           - module: 'packages/cli'
-            repo: diplodoc-platform/cli.git
+            repo: diplodoc-platform/cli
           - module: 'packages/client'
-            repo: diplodoc-platform/client.git
+            repo: diplodoc-platform/client
           - module: 'packages/gh-docs'
-            repo: diplodoc-platform/gh-docs.git
+            repo: diplodoc-platform/gh-docs
           - module: 'packages/sentenizer'
-            repo: diplodoc-platform/sentenizer.git
+            repo: diplodoc-platform/sentenizer
           - module: 'packages/translation'
-            repo: diplodoc-platform/translation.git
+            repo: diplodoc-platform/translation
 
 
     steps:
