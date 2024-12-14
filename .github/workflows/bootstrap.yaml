@@ -27,7 +27,7 @@ jobs:
           dir_names: "true"
           dir_names_exclude_current_dir: "true"
 
-      - uses: danyow/json-matrix-builder@master
+      - uses: danyow/json-matrix-builder@main
         id: split_files
         with:
           str: ${{ steps.changed_files.outputs.all_changed_files }}
