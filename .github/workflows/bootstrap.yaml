@@ -65,13 +65,13 @@ jobs:
           - module: 'packages/translation'
             repo: diplodoc-platform/translation
 
-    if: contains(fromJSON(needs.changed-files.outputs.packages), matrix.module)
-
     steps:
       - name: Check out ${{ matrix.module }}
+        if: contains(fromJSON(needs.changed-files.outputs.packages), matrix.module)
         uses: actions/checkout@v4
         with:
           repository: ${{ matrix.repo }}
 
       - name: Run npm bootstrap
+        if: contains(fromJSON(needs.changed-files.outputs.packages), matrix.module)
         run: npm run bootstrap
