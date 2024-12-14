@@ -12,7 +12,7 @@ jobs:
 
     outputs:
       any_changed: ${{ steps.changed_files.any_changed }}
-      packages: ${{ steps.changed-files.outputs.all_changed_files }}
+      packages: ${{ steps.changed_files.outputs.all_changed_files }}
 
     steps:
       - name: Check out code
