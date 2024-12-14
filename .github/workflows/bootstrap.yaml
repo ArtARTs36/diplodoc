@@ -36,8 +36,6 @@ jobs:
 
     needs: changed-files
 
-    if: needs.changed-files.outputs.packages[0] != null
-
     strategy:
       matrix:
         package: ${{ needs.changed-files.outputs.packages }}
