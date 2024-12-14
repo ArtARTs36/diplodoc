@@ -47,7 +47,7 @@ jobs:
         module: ${{ fromJSON(needs.changed-files.outputs.packages) }}
         include:
           - module: 'packages/test'
-            repo: 'ggg'
+            repo: 'packages/transform'
           - module: 'packages/test1'
             repo: 'ggg'
           - module: 'packages/components'
