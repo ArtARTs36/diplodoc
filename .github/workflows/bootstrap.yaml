@@ -24,11 +24,9 @@ jobs:
         with:
           files: |
             packages/**
-          dir_names: "true"
-          dir_names_exclude_current_dir: "true"
 
       - name: Print modified files
-        run: echo ${{ steps.changed-files.outputs.all_changed_files }}
+        run: echo ${{ toJSON(steps.changed-files.outputs.all_changed_files) }}
 
   run-npm-bootstrap:
     name: 'Run npm bootstrap in modified package'
