@@ -27,10 +27,11 @@ jobs:
           dir_names: "true"
           dir_names_exclude_current_dir: "true"
 
-      - uses: winterjung/split@v2
+      - uses: danyow/json-matrix-builder@master
         id: split_files
         with:
-          msg: ${{ steps.changed_files.outputs.all_changed_files }}
+          str: ${{ steps.changed_files.outputs.all_changed_files }}
+          separator: space
 
       - name: Print modified files
         run: echo ${{ toJSON(steps.changed_files.any_changed) }} -- ${{ toJSON(steps.changed_files.outputs.all_changed_files) }}
